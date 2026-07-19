@@ -1,0 +1,44 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0px;
+  min-height: 100%;
+}
+
+/* Use Inter as the global UI font for all text elements */
+html, body, input, button, textarea, select, a, p, h1, h2, h3, h4, h5, h6, li, span {
+  font-family: 'Inter';
+}
+
+a {
+  text-decoration: none;
+}
+
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+/* Registered locally-installed weights so components can request
+   the true Medium/SemiBold cut instead of faux-bolding Regular. */
+@font-face {
+  font-family: "Inter-Medium";
+  src: local("Inter-Medium");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter");
+}
+
+@font-face {
+  font-family: "Inter-SemiBold";
+  src: local("Inter-SemiBold");
+}

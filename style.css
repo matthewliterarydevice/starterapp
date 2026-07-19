@@ -1,0 +1,224 @@
+/* ==========================================================================
+   Onboarding — Overdose Response
+   ========================================================================== */
+
+.onboarding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 72px 48px;
+  background-color: var(--quickresponseicon);
+}
+
+.ICON {
+  position: relative;
+  width: 142px;
+  height: 169px;
+}
+
+.ICON .pin-back {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 0;
+}
+
+.ICON .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 63px;
+  height: 63px;
+  transform: translate(-50%, calc(-56% - 5px));
+  z-index: 1;
+}
+
+/* center the heart inside the icon pin */
+.ICON .heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36px;
+  height: 36px;
+  transform: translate(-50%, calc(-56% - 5px));
+  z-index: 2;
+}
+
+
+/* ---------- Title & explanation ---------- */
+
+.text-title {
+  width: 100%;
+  font-family: var(--header-font-family);
+  font-weight: var(--header-font-weight);
+  font-size: 36px;
+  line-height: normal;
+  letter-spacing: var(--header-letter-spacing);
+  color: var(--typographyprimary-text);
+  text-align: center;
+}
+
+.explanation {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.text-explanation {
+  width: 100%;
+  font-family: var(--text-font-family);
+  font-weight: var(--text-font-weight);
+  font-size: var(--text-font-size);
+  line-height: var(--text-line-height);
+  letter-spacing: var(--text-letter-spacing);
+  font-style: var(--text-font-style);
+  color: var(--typographysecondary-text);
+  text-align: center;
+}
+
+/* ---------- Feature list ---------- */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 340px; /* constrain line length, center the block */
+  margin: 0 auto 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-left: 56px; /* reserve space for absolute icon */
+}
+
+/* Icon frame shared by the phone and clock rows */
+.div-2,
+.vertical-container {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* unified feature icon size */
+.div-2 img.feature-icon,
+.vertical-container img.feature-icon,
+.div-2 img,
+.vertical-container img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.phone,
+.pin,
+.vertical-container .img {
+  width: 24px;
+  height: 24px;
+}
+
+/* center stacked vectors in the vertical-container */
+/* ensure inner images are static so combined SVGs render correctly */
+.vertical-container .pin,
+.vertical-container .img {
+  position: static;
+  top: auto;
+  left: auto;
+  transform: none;
+}
+
+/* removed legacy split-icon rules; combined SVGs render as single images */
+
+.text-wrapper {
+  font-family: var(--text-font-family);
+  font-weight: var(--normal-bold-font-weight);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: var(--typographyprimary-text);
+  text-align: left;
+  display: block;
+}
+
+/* ---------- Call to action ---------- */
+
+.button-wrapper {
+  width: 100%;
+}
+
+.button {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 18px 16px;
+  background-color: var(--secondary);
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* Focus ring comes from the sitewide button:focus-visible rule
+   in globals.css — not redeclared here to avoid two rules
+   fighting over !important. */
+
+.text-label {
+  font-family: var(--text-font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* ---------- Reassurance ---------- */
+
+.text-reassurance {
+  width: 100%;
+  font-family: var(--subtext-font-family);
+  font-weight: var(--subtext-font-weight);
+  font-size: var(--subtext-font-size);
+  line-height: var(--subtext-line-height);
+  letter-spacing: var(--subtext-letter-spacing);
+  font-style: var(--subtext-font-style);
+  color: var(--typographymuted);
+  text-align: center;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 440px) {
+  .onboarding {
+    max-width: 100%;
+    padding: 56px 24px 32px;
+  }
+}
